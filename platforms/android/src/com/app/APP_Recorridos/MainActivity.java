@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.app.smart;
+package com.app.APP_Recorridos;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
