@@ -70,7 +70,16 @@ function geo() {
                     var pointRapidoOtherD = new google.maps.LatLng(-36.60246278338412, -72.09026545286179);
                     var pointRapidoOtherE = new google.maps.LatLng(-36.5976867147853, -72.10915893316269);
                     var pointRapidoOtherF = new google.maps.LatLng(-36.603922676817554, -72.11179822683334);
-
+                    var pointRapidoOtherG = new google.maps.LatLng(-36.60595097847018, -72.10399568080902);
+                    var pointRapidoOtherH = new google.maps.LatLng(-36.60860362370549, -72.09332585334778);
+                    var pointRapidoOtherI = new google.maps.LatLng(-36.6097748925655, -72.0937067270279);
+                    var pointRapidoOtherJ = new google.maps.LatLng(-36.60833664081416, -72.09974706172943);
+                    var pointRapidoOtherK = new google.maps.LatLng(-36.61584625852837, -72.10259020328522);
+                    var pointRapidoOtherL = new google.maps.LatLng(-36.617327427046746, -72.09632456302643);
+                    var pointRapidoOtherM = new google.maps.LatLng(-36.61937690400007, -72.09514439105987);
+                    
+                    
+                    
                     requestDirections(pointRapidoA, pointRapidoB);
                     requestDirections(pointRapidoB, pointRapidoC);
                     requestDirections(pointRapidoC, pointRapidoD);
@@ -80,6 +89,13 @@ function geo() {
                     requestDirections(pointRapidoOtherC, pointRapidoOtherD);
                     requestDirections(pointRapidoOtherD, pointRapidoOtherE);
                     requestDirections(pointRapidoOtherE, pointRapidoOtherF);
+                    requestDirections(pointRapidoOtherF, pointRapidoOtherG);
+                    requestDirections(pointRapidoOtherG, pointRapidoOtherH);
+                    requestDirections(pointRapidoOtherH, pointRapidoOtherI);
+                    requestDirections(pointRapidoOtherI, pointRapidoOtherJ);
+                    requestDirections(pointRapidoOtherJ, pointRapidoOtherK);
+                    requestDirections(pointRapidoOtherK, pointRapidoOtherL);
+                    requestDirections(pointRapidoOtherL, pointRapidoOtherM);
                 }
 
                 if (mostrarRapido == true) {
