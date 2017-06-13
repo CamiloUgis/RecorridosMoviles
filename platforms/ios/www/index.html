@@ -25,7 +25,7 @@
         </style>
     </head>
 
-    <body onload="geo()">
+    <body onload="init();geo();">
         <!-- First, we need to add Panel's overlay that will overlays app while panel is opened -->
         <div class="panel-overlay"></div>
 
@@ -94,17 +94,13 @@
             </div>
         </div>
 
-        <div class="panel panel-right panel-cover">
+        <div id="menuDerecho" class="panel panel-right panel-cover">
             <div class="content-block-title">Menú</div>
             <!-- Inset content block -->
             <div class="content-block inset">
                 <div class="content-block-inner">
                     <p>Imagen Línea Rápido</p>
-                </div>
-            </div>
-            <div class="content-block inset">
-                <div class="content-block-inner">
-                    <p>Imagen Línea 13</p>
+                    <img id="imgRapido" width="100%" height="150px" source=>
                 </div>
             </div>
         </div>
