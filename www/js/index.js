@@ -60,7 +60,20 @@ function geo() {
                 }
 
                 //Línea rápido
+                var flightPlanCoordinates = [
+                    {lat: -36.62591678228322, lng: -72.0678998529911},
+                    {lat: -36.625593891505204, lng: -72.07119092345238},
+                    {lat: -36.63117325388117, lng: -72.07284852862358},
+                    {lat: -36.63037253688364, lng: -72.07706227898598}
+                ];
 
+                var flightPath = new google.maps.Polyline({
+                    path: flightPlanCoordinates,
+                    geodesic: true,
+                    strokeColor: '#FF0000',
+                    strokeOpacity: 1.0,
+                    strokeWeight: 2
+                });
                 //Recorrido Ida
                 var pointRapidoIda1 = new google.maps.LatLng(-36.62591678228322, -72.0678998529911);
                 var pointRapidoIda2 = new google.maps.LatLng(-36.625593891505204, -72.07119092345238);
@@ -84,19 +97,19 @@ function geo() {
                 var pointRapidoIda18 = new google.maps.LatLng(-36.6098136474811, -72.09346398711205);
                 var pointRapidoIda19 = new google.maps.LatLng(-36.60828927278529, -72.09976986050606);
                 var pointRapidoIda20 = new google.maps.LatLng(-36.610646873456076, -72.10067057982087);
-                
-                
+
+
                 var pointRapidoIda21 = new google.maps.LatLng(-36.60767133265258, -72.11289390921593);
                 var pointRapidoIda22 = new google.maps.LatLng(-36.59778577060809, -72.1091978251934);
                 var pointRapidoIda23 = new google.maps.LatLng(-36.60237665311492, -72.09060341119766);
                 var pointRapidoIda24 = new google.maps.LatLng(-36.60096087303316, -72.0899174362421);
                 var pointRapidoIda25 = new google.maps.LatLng(-36.60464400039528, -72.08156369626522);
                 var pointRapidoIda26 = new google.maps.LatLng(-36.59441564780987, -72.07229599356651);
-                
-                
-                
-                
-                
+
+
+
+
+
                 //Recorrido Vuelta
                 var pointRapidoVuelta1 = new google.maps.LatLng(-36.59441564780987, -72.07229599356651);
                 var pointRapidoVuelta2 = new google.maps.LatLng(-36.60464400039528, -72.08156369626522);
@@ -108,9 +121,9 @@ function geo() {
                 var pointRapidoVuelta8 = new google.maps.LatLng(-36.60238095963067, -72.09060475230217);
                 var pointRapidoVuelta9 = new google.maps.LatLng(-36.60219577923659, -72.09074959158897);
                 var pointRapidoVuelta10 = new google.maps.LatLng(-36.597739472793705, -72.10952304303646);
-                
-                
-                
+
+
+
                 var pointRapidoVuelta11 = new google.maps.LatLng(-36.6039248300323, -72.11178615689278);
                 var pointRapidoVuelta12 = new google.maps.LatLng(-36.6085347249833, -72.0931850373745);
                 var pointRapidoVuelta13 = new google.maps.LatLng(-36.60977919866818, -72.09365710616112);
@@ -121,8 +134,8 @@ function geo() {
                 var pointRapidoVuelta18 = new google.maps.LatLng(-36.62373616695088, -72.09792450070381);
                 var pointRapidoVuelta19 = new google.maps.LatLng(-36.62434321512527, -72.0940051227808);
                 var pointRapidoVuelta20 = new google.maps.LatLng(-36.62686822591033, -72.09546558558941);
-                
-                
+
+
                 var pointRapidoVuelta21 = new google.maps.LatLng(-36.62887009382969, -72.09017023444176);
                 var pointRapidoVuelta22 = new google.maps.LatLng(-36.628235098346444, -72.08802983164787);
                 var pointRapidoVuelta23 = new google.maps.LatLng(-36.62881628085604, -72.08666190505028);
@@ -135,25 +148,26 @@ function geo() {
                 var pointRapidoVuelta30 = new google.maps.LatLng(-36.62566169868079, -72.07092069089413);
                 var pointRapidoVuelta31 = new google.maps.LatLng(-36.62591355338212, -72.06789247691631);
 
-                
+
                 //Mostrar puntos en pantalla
-                
-                if(mostrarRapidoIda1==true){
-                    requestDirections(pointRapidoIda1, pointRapidoIda2);
-                    requestDirections(pointRapidoIda2, pointRapidoIda3);
-                    requestDirections(pointRapidoIda3, pointRapidoIda4);
-                    requestDirections(pointRapidoIda4, pointRapidoIda5);
-                    requestDirections(pointRapidoIda5, pointRapidoIda6);
-                    requestDirections(pointRapidoIda6, pointRapidoIda7);
-                    requestDirections(pointRapidoIda7, pointRapidoIda8);
-                    requestDirections(pointRapidoIda8, pointRapidoIda9);
-                    requestDirections(pointRapidoIda9, pointRapidoIda10);
-                    requestDirections(pointRapidoIda10, pointRapidoIda11);
+
+                if (mostrarRapidoIda1 == true) {
+                     flightPath.setMap(map);
+//                    requestDirections(pointRapidoIda1, pointRapidoIda2);
+//                    requestDirections(pointRapidoIda2, pointRapidoIda3);
+//                    requestDirections(pointRapidoIda3, pointRapidoIda4);
+//                    requestDirections(pointRapidoIda4, pointRapidoIda5);
+//                    requestDirections(pointRapidoIda5, pointRapidoIda6);
+//                    requestDirections(pointRapidoIda6, pointRapidoIda7);
+//                    requestDirections(pointRapidoIda7, pointRapidoIda8);
+//                    requestDirections(pointRapidoIda8, pointRapidoIda9);
+//                    requestDirections(pointRapidoIda9, pointRapidoIda10);
+//                    requestDirections(pointRapidoIda10, pointRapidoIda11);
 
                 }
-                
-                if(mostrarRapidoIda2==true){
-                    
+
+                if (mostrarRapidoIda2 == true) {
+
                     requestDirections(pointRapidoIda11, pointRapidoIda12);
                     requestDirections(pointRapidoIda12, pointRapidoIda13);
                     requestDirections(pointRapidoIda13, pointRapidoIda14);
@@ -166,8 +180,8 @@ function geo() {
                     requestDirections(pointRapidoIda20, pointRapidoIda21);
 
                 }
-                if(mostrarRapidoIda3==true){
-                    
+                if (mostrarRapidoIda3 == true) {
+
                     requestDirections(pointRapidoIda21, pointRapidoIda22);
                     requestDirections(pointRapidoIda22, pointRapidoIda23);
                     requestDirections(pointRapidoIda23, pointRapidoIda4);
@@ -176,7 +190,7 @@ function geo() {
                 }
 
 
-                if(mostrarRapidoVuelta1==true){
+                if (mostrarRapidoVuelta1 == true) {
                     requestDirections(pointRapidoVuelta1, pointRapidoVuelta2);
                     requestDirections(pointRapidoVuelta2, pointRapidoVuelta3);
                     requestDirections(pointRapidoVuelta3, pointRapidoVuelta4);
@@ -189,8 +203,8 @@ function geo() {
                     requestDirections(pointRapidoVuelta10, pointRapidoVuelta11);
 
                 }
-                    
-                if(mostrarRapidoVuelta2==true){
+
+                if (mostrarRapidoVuelta2 == true) {
                     requestDirections(pointRapidoVuelta11, pointRapidoVuelta12);
                     requestDirections(pointRapidoVuelta12, pointRapidoVuelta13);
                     requestDirections(pointRapidoVuelta13, pointRapidoVuelta14);
@@ -203,8 +217,8 @@ function geo() {
                     requestDirections(pointRapidoVuelta20, pointRapidoVuelta21);
 
                 }
-                    
-                if(mostrarRapidoVuelta3==true){
+
+                if (mostrarRapidoVuelta3 == true) {
                     requestDirections(pointRapidoVuelta21, pointRapidoVuelta22);
                     requestDirections(pointRapidoVuelta22, pointRapidoVuelta23);
                     requestDirections(pointRapidoVuelta23, pointRapidoVuelta24);
@@ -220,7 +234,6 @@ function geo() {
 
 
             },
-        
             function (error) {
                 myApp.alert('Se ha producido un error, active GPS', 'APP_Recorrido');
                 myApp.hidePreloader();
@@ -236,123 +249,123 @@ function geo() {
 
 function lineaRapido() {
     if (document.getElementById('rapidoIda1').checked) {
-        mostrarRapidoIda1=true;
-        mostrarRapidoIda2=false;
-        mostrarRapidoIda3=false;
-        mostrarRapidoVuelta1=false;
-        mostrarRapidoVuelta2=false;
-        mostrarRapidoVuelta3=false;
+        mostrarRapidoIda1 = true;
+        mostrarRapidoIda2 = false;
+        mostrarRapidoIda3 = false;
+        mostrarRapidoVuelta1 = false;
+        mostrarRapidoVuelta2 = false;
+        mostrarRapidoVuelta3 = false;
         geo();
     } else {
         if (document.getElementById('rapidoIda2').checked) {
-            mostrarRapidoIda1=false;
-            mostrarRapidoIda2=true;
-            mostrarRapidoIda3=false;
-            mostrarRapidoVuelta1=false;
-            mostrarRapidoVuelta2=false;
-            mostrarRapidoVuelta3=false;
+            mostrarRapidoIda1 = false;
+            mostrarRapidoIda2 = true;
+            mostrarRapidoIda3 = false;
+            mostrarRapidoVuelta1 = false;
+            mostrarRapidoVuelta2 = false;
+            mostrarRapidoVuelta3 = false;
             geo();
-        }else{
-            if(document.getElementById('rapidoIda3').checked){
-                mostrarRapidoIda1=false;
-                mostrarRapidoIda2=false;
-                mostrarRapidoIda3=true;
-                mostrarRapidoVuelta1=false;
-                mostrarRapidoVuelta2=false;
-                mostrarRapidoVuelta3=false;
+        } else {
+            if (document.getElementById('rapidoIda3').checked) {
+                mostrarRapidoIda1 = false;
+                mostrarRapidoIda2 = false;
+                mostrarRapidoIda3 = true;
+                mostrarRapidoVuelta1 = false;
+                mostrarRapidoVuelta2 = false;
+                mostrarRapidoVuelta3 = false;
                 geo();
-            }else{
-                if(document.getElementById('rapidoVuelta1').checked){
-                    mostrarRapidoIda1=false;
-                    mostrarRapidoIda2=false;
-                    mostrarRapidoIda3=false;
-                    mostrarRapidoVuelta1=true;
-                    mostrarRapidoVuelta2=false;
-                    mostrarRapidoVuelta3=false;
+            } else {
+                if (document.getElementById('rapidoVuelta1').checked) {
+                    mostrarRapidoIda1 = false;
+                    mostrarRapidoIda2 = false;
+                    mostrarRapidoIda3 = false;
+                    mostrarRapidoVuelta1 = true;
+                    mostrarRapidoVuelta2 = false;
+                    mostrarRapidoVuelta3 = false;
                     geo();
-                }else{
-                    if(document.getElementById('rapidoVuelta2').checked){
-                        mostrarRapidoIda1=false;
-                        mostrarRapidoIda2=false;
-                        mostrarRapidoIda3=false;
-                        mostrarRapidoVuelta1=false;
-                        mostrarRapidoVuelta2=true;
-                        mostrarRapidoVuelta3=false;
+                } else {
+                    if (document.getElementById('rapidoVuelta2').checked) {
+                        mostrarRapidoIda1 = false;
+                        mostrarRapidoIda2 = false;
+                        mostrarRapidoIda3 = false;
+                        mostrarRapidoVuelta1 = false;
+                        mostrarRapidoVuelta2 = true;
+                        mostrarRapidoVuelta3 = false;
                         geo();
-                    }else{
-                        if(document.getElementById('rapidoVuelta3').checked){
-                            mostrarRapidoIda1=false;
-                            mostrarRapidoIda2=false;
-                            mostrarRapidoIda3=false;
-                            mostrarRapidoVuelta1=false;
-                            mostrarRapidoVuelta2=false;
-                            mostrarRapidoVuelta3=true;
+                    } else {
+                        if (document.getElementById('rapidoVuelta3').checked) {
+                            mostrarRapidoIda1 = false;
+                            mostrarRapidoIda2 = false;
+                            mostrarRapidoIda3 = false;
+                            mostrarRapidoVuelta1 = false;
+                            mostrarRapidoVuelta2 = false;
+                            mostrarRapidoVuelta3 = true;
                             geo();
-                        }else{
-                            mostrarRapidoIda1=false;
-                            mostrarRapidoIda2=false;
-                            mostrarRapidoIda3=false;
-                            mostrarRapidoVuelta1=false;
-                            mostrarRapidoVuelta2=false;
-                            mostrarRapidoVuelta3=false;
-                            geo(); 
+                        } else {
+                            mostrarRapidoIda1 = false;
+                            mostrarRapidoIda2 = false;
+                            mostrarRapidoIda3 = false;
+                            mostrarRapidoVuelta1 = false;
+                            mostrarRapidoVuelta2 = false;
+                            mostrarRapidoVuelta3 = false;
+                            geo();
                         }
                     }
-                } 
-        
+                }
+
             }
-       
+
         }
     }
 }
 
 //Descarga de imagen
-function init(){
-  console.log('Inicio de descarga');
-  window.requestFileSystem(window.TEMPORARY, 5 * 1024 * 1024, function (fs) {
+function init() {
+    console.log('Inicio de descarga');
+    window.requestFileSystem(window.TEMPORARY, 5 * 1024 * 1024, function (fs) {
 
-      console.log('file system open: ' + fs.name);
+        console.log('file system open: ' + fs.name);
 
-      // Make sure you add the domain name to the Content-Security-Policy <meta> element.
-      var url = 'http://i.imgur.com/krdlB2M.jpg';
-      // Parameters passed to getFile create a new file or return the file if it already exists.
-      fs.root.getFile('downloaded-image.png', { create: true, exclusive: false }, function (fileEntry) {
-          download(fileEntry, url, true);
+        // Make sure you add the domain name to the Content-Security-Policy <meta> element.
+        var url = 'http://i.imgur.com/krdlB2M.jpg';
+        // Parameters passed to getFile create a new file or return the file if it already exists.
+        fs.root.getFile('downloaded-image.png', {create: true, exclusive: false}, function (fileEntry) {
+            download(fileEntry, url, true);
 
-      }, error);
+        }, error);
 
-  }, error);
+    }, error);
 }
 
-function error(){
-  console.log("Error");
+function error() {
+    console.log("Error");
 }
 
 function download(fileEntry, uri, readBinaryData) {
 
-  var fileTransfer = new FileTransfer();
-  var fileURL = fileEntry.toURL();
+    var fileTransfer = new FileTransfer();
+    var fileURL = fileEntry.toURL();
 
-  fileTransfer.download(
-      uri,
-      fileURL,
-      function (entry) {
-          console.log("Successful download...");
-          console.log("download complete: " + entry.toURL());
-            displayImageByFileURL(entry);
-      },
-      function (error) {
-          console.log("download error source " + error.source);
-          console.log("download error target " + error.target);
-          console.log("upload error code" + error.code);
-      },
-      null, // or, pass false
-      {
-          //headers: {
-          //    "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
-          //}
-      }
-  );
+    fileTransfer.download(
+            uri,
+            fileURL,
+            function (entry) {
+                console.log("Successful download...");
+                console.log("download complete: " + entry.toURL());
+                displayImageByFileURL(entry);
+            },
+            function (error) {
+                console.log("download error source " + error.source);
+                console.log("download error target " + error.target);
+                console.log("upload error code" + error.code);
+            },
+            null, // or, pass false
+            {
+                //headers: {
+                //    "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+                //}
+            }
+    );
 }
 
 function displayImageByFileURL(fileEntry) {
