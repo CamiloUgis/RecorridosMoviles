@@ -459,8 +459,8 @@ function linea13(){
 }
     
 
-//Descarga de imagen
-function init() {
+//Descarga de imagen línea Rápido
+function initRapido() {
     console.log('Inicio de descarga');
     window.requestFileSystem(window.TEMPORARY, 5 * 1024 * 1024, function (fs) {
 
@@ -469,11 +469,11 @@ function init() {
         // Make sure you add the domain name to the Content-Security-Policy <meta> element.
         var fotoRapido = 'http://i.imgur.com/krdlB2M.jpg';
         // Parameters passed to getFile create a new file or return the file if it already exists.
-        fs.root.getFile('downloaded-image.png', {create: true, exclusive: false}, function (fileEntry) {
-            download(fileEntry, fotoRapido, true);
+        fs.root.getFile('downloaded-Rapido.png', {create: true, exclusive: false}, function (fileEntry) {
+            downloadRapido(fileEntry, fotoRapido, true);
 
         }, error);
-
+        
     }, error);
 }
 
@@ -481,7 +481,7 @@ function error() {
     console.log("Error");
 }
 
-function download(fileEntry, uri, readBinaryData) {
+function downloadRapido(fileEntry, uri, readBinaryData) {
 
     var fileTransfer = new FileTransfer();
     var fileURL = fileEntry.toURL();
@@ -492,7 +492,7 @@ function download(fileEntry, uri, readBinaryData) {
             function (entry) {
                 console.log("Successful download...");
                 console.log("download complete: " + entry.toURL());
-                displayImageByFileURL(entry);
+                displayImageByFileURLRapido(entry);
             },
             function (error) {
                 console.log("download error source " + error.source);
@@ -508,7 +508,54 @@ function download(fileEntry, uri, readBinaryData) {
     );
 }
 
-function displayImageByFileURL(fileEntry) {
+function displayImageByFileURLRapido(fileEntry) {
     var elem = document.getElementById('imgRapido');
+    elem.src = fileEntry.toURL();
+}
+
+//Descaga Imagen línea 13
+function initTrece() {
+    console.log('Inicio de descarga');
+    window.requestFileSystem(window.TEMPORARY, 5 * 1024 * 1024, function (fs) {
+
+        console.log('file system open: ' + fs.name);
+
+        // Make sure you add the domain name to the Content-Security-Policy <meta> element.
+        var fotoTrece = 'http://i.imgur.com/3YdtsL9.jpg';
+        fs.root.getFile('downloaded-Trece.png', {create: true, exclusive: false}, function (fileEntry) {
+            downloadTrece(fileEntry, fotoTrece, true);
+        }, error);    
+    }, error);
+}
+
+function downloadTrece(fileEntry, uri, readBinaryData) {
+
+    var fileTransfer = new FileTransfer();
+    var fileURL = fileEntry.toURL();
+
+    fileTransfer.download(
+            uri,
+            fileURL,
+            function (entry) {
+                console.log("Successful download...");
+                console.log("download complete: " + entry.toURL());
+                displayImageByFileURLTrece(entry);
+            },
+            function (error) {
+                console.log("download error source " + error.source);
+                console.log("download error target " + error.target);
+                console.log("upload error code" + error.code);
+            },
+            null, // or, pass false
+            {
+                //headers: {
+                //    "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+                //}
+            }
+    );
+}
+
+function displayImageByFileURLTrece(fileEntry) {
+    var elem = document.getElementById('imgTrece');
     elem.src = fileEntry.toURL();
 }
