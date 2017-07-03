@@ -17,15 +17,15 @@
 
         <style>
             .panel{
-                background: #e4e4e4;
+                background: #01DFA5;
             }
             .popup{
-                background: #e4e4e4;
+                background: #80FF00;
             }
         </style>
     </head>
 
-    <body onload="initRapido();geo();initTrece();">
+    <body onload="initRapido();geo();init11();initTrece();">
         <!-- First, we need to add Panel's overlay that will overlays app while panel is opened -->
         <div class="panel-overlay"></div>
 
@@ -75,6 +75,41 @@
                             <ul>
                                 <div class="content-block-inner">
                                     <div id="nosesion2">
+                                        <FONT size=2.5> <p>Linea 11</p></FONT>
+                                <!-- Single chekbox item -->
+                                <li>
+                                    <label class="label-radio item-content">
+                                        <!-- Checked by default -->
+                                        <input type="radio" name="my-radio"  id="11ida">
+                                        <div class="item-media">
+                                            <i class="icon icon-form-radio"></i>
+                                        </div>
+                                        <div class="item-inner">
+                                            <FONT size=1.5><div class="item-title">Ruta de Ida</div></FONT>
+                                        </div>
+                                    </label>
+                                </li>
+                                
+                                <li>
+                                    <label class="label-radio item-content">
+                                        <!-- Checked by default -->
+                                        <input type="radio" name="my-radio"  id="11vuelta">
+                                        <div class="item-media">
+                                            <i class="icon icon-form-radio"></i>
+                                        </div>
+                                        <div class="item-inner">
+                                            <FONT size=1.5><div class="item-title" width>Ruta de Vuelta</div></FONT>
+                                        </div>
+                                    </label>
+                                </li> 
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="list-block">
+                            <ul>
+                                <div class="content-block-inner">
+                                    <div id="nosesion2">
                                         <FONT size=2.5> <p>Linea 13</p></FONT>
                                 <!-- Single chekbox item -->
                                 <li>
@@ -105,19 +140,21 @@
                                     </div>
                                 </div>
                             </ul>
-                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div id="menuDerecho" class="panel panel-right panel-cover">
-            <div class="content-block-title">Menú</div>
+            <div class="content-block-title">Imágenes de Líneas</div>
             <!-- Inset content block -->
             <div class="content-block inset">
                 <div class="content-block-inner">
                     <p>Imagen Línea Rápido</p>
                     <img id="imgRapido" width="100%" height="150px" source=>
+                    <p>Imagen Línea 11</p>
+                    <img id="img11" width="100%" height="150px" source=>
                     <p>Imagen Línea Trece</p>
                     <img id="imgTrece" width="100%" height="150px" source=>
                 </div>
@@ -138,13 +175,13 @@
                             <div class="navbar-inner">
                                 <div class="left">
                                     <a class="link open-panel" data-panel="left">
-                                        <i class="f7-icons">persons</i>
+                                        <i class="f7-icons">paper_plane</i>
                                     </a>
                                 </div>
                                 <div class="center">APP_Recorridos</div>
                                 <div class="right">
                                     <a class="link open-panel" data-panel="right">
-                                        <i class="f7-icons">menu</i>
+                                        <i class="f7-icons">download_round_fill</i>
                                     </a>
                                 </div>
                             </div>
